@@ -1,0 +1,60 @@
+% compilers.tex
+
+\documentclass[a4paper, british]{memoir}
+
+\usepackage{style}       % Custom style
+\usepackage{mnfrontpage} % Front page
+\usepackage{kantlipsum}  % Dummy text
+
+\title{Compliers}
+% \subtitle{Theory, Protocols, and Systems}
+\author{Hengfeng Wei}
+\date{\today}
+% \kind{Report \#17\hfill\the\year} % Optional
+
+\includeonly {
+  chapters/abstract,
+  chapters/acks,
+  chapters/intro,
+  chapters/lr,
+  chapters/lr0,
+}
+
+\begin{document}
+  \frontmatter        % Folios in Roman numerals, unnumbered chapters.
+  \mnfrontpage
+
+  \include{chapters/abstract}
+  \include{chapters/acks}
+
+  \cleartorecto
+  \tableofcontents    % or \tableofcontents*
+  \cleartorecto
+  \listoffigures      % or \listoffigures*
+  \cleartorecto
+  \listoftables       % or \listoftables*
+
+  \mainmatter         % Folios in Arabic numerals, numbered chapters.
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \include{chapters/intro}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \part{Part I: Lexical Analysis}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \part{Part II: Parsing}
+    \include{chapters/lr}
+    \include{chapters/lr0}
+    % \include{chapters/slr}
+    % \include{chapters/lr1}
+    % \include{chapters/lalr1}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \appendix
+  \appendixpage  % similar to \part*{Appendices}, but appears in TOC.
+
+  % \include{sections/appendixA}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \backmatter         % Folios in Arabic numerals, unnumbered chapters.
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \printbibliography
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
